@@ -14,5 +14,6 @@ services:
 
   xdebug:
     build: .
+    image: javanile/xdebug
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
     restart: on-failure
