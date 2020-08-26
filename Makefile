@@ -1,6 +1,7 @@
 
 build:
 	chmod +x xdebug-entrypoint.sh
+	docker build -t javanile/xdebug .
 	docker-compose build
 
 up: build
