@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  php:
+    build: php
+    volumes:
+      - .:/var/www/html
+      - ./xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    ports:
+      - 8080:80
+    links:
+      - xdebug
+
+  xdebug:
+    build: .
+    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+    restart: on-failure
